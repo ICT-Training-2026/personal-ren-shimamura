@@ -1,2 +1,2 @@
-publuc class ex1{
+public class ex1{
 }
