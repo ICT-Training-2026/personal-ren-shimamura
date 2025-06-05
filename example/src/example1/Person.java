@@ -1,3 +1,5 @@
+package example1;
+
 public class Person {
     private String name;
  
@@ -13,7 +15,7 @@ public class Person {
         this.name = name;
     }
  
-    public void introduce() {
-        System.out.println("私は" + name + "と申します。");
+    public String introduce() {
+    	return "私は" + name + "と申します。";
     }
 }
