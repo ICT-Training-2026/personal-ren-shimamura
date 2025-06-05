@@ -1,3 +1,3 @@
-public class Project2{
+public class project2{
 
 }
