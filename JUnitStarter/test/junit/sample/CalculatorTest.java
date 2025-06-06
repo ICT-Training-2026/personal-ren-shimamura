@@ -2,17 +2,25 @@ package junit.sample;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
 public class CalculatorTest {
-
+	
+	Calculator cal;
+	
+	@BeforeEach
+	public void setUp(){
+		//オブジェクトを生成
+		cal = new Calculator();
+	}
+	
 	@Test
 	public void testAdd() {
-		//オブジェクトを生成
-		Calculator cal = new Calculator();
+		
 		//期待値
 		int expected = 5;
 		//実測値
@@ -23,8 +31,6 @@ public class CalculatorTest {
 
 	@Test
 	public void testSub() {
-		//オブジェクトを生成
-		Calculator cal = new Calculator();
 		//期待値
 		int expected = 1;
 		//実測値
@@ -35,8 +41,7 @@ public class CalculatorTest {
 
 	@Test
 	public void testMul() {
-		//オブジェクトを生成
-		Calculator cal = new Calculator();
+		
 		//期待値
 		int expected = 6;
 		//実測値
@@ -50,8 +55,6 @@ public class CalculatorTest {
 
 		@Test
 		public void testDiv() {
-			//オブジェクトを生成
-			Calculator cal = new Calculator();
 			//期待値
 			float expected = 1.5f;
 			//実測値
@@ -64,14 +67,12 @@ public class CalculatorTest {
 		//実行構成→包含、除外→includeの中にexceptionなどタグ名を入れる
 		@Tag("Exception")
 		public void testDivException() {
-			Calculator cal = new Calculator();
 			assertThrows(IllegalArgumentException.class, () -> cal.div(3, 0));
 		}
 
 		@Test
 		@Tag("Exception")
 		public void testDivException2() {
-			Calculator cal = new Calculator();
 			try {
 				cal.div(3, 0);
 				fail();
