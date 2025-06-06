@@ -27,6 +27,7 @@ public class DateExample {
 		this.message = "現在時刻:" + date;
 	}
 
+	//メソッドの抽出
 	public LocalDateTime newDate() {
 		return LocalDateTime.now();
 	}
