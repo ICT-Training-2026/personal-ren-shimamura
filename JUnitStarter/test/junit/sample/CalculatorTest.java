@@ -42,7 +42,8 @@ public class CalculatorTest {
 		
 		assertEquals(expected,actual);		
 	}
-
+	
+	
 	@Test
 	public void testDiv() {
 		//オブジェクトを生成
@@ -53,6 +54,24 @@ public class CalculatorTest {
 		float actual = cal.div(3,2);
 		
 		assertEquals(expected,actual);		
+	}
+	
+	@Test
+	public void testDivException() {
+		Calculator cal = new Calculator();
+		assertThrows(IllegalArgumentException.class,() -> cal.div(3,0));
+	}
+	
+	@Test
+	public void testDivException2() {
+		Calculator cal = new Calculator();
+		try {
+			cal.div(3,0);
+			fail();
+		}
+		catch (IllegalArgumentException e) {
+			assertEquals("第二引数に0が指定されました",e.getMessage());
+		}
 	}
 
 }
