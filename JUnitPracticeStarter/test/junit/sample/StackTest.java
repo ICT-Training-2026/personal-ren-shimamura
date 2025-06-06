@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 public class StackTest {
-	public Stack<String> stack;
+	private Stack<String> stack;
 	public String anElement = "要素1";
 
 	@BeforeEach
