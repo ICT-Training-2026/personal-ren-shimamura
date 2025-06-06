@@ -1,0 +1,58 @@
+package junit.sample;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+public class CalculatorTest {
+
+	@Test
+	public void testAdd() {
+		//オブジェクトを生成
+		Calculator cal = new Calculator();
+		//期待値
+		int expected = 5;
+		//実測値
+		int actual = cal.add(3,2);
+		//比較
+		assertEquals(expected,actual);
+	}
+
+	@Test
+	public void testSub() {
+		//オブジェクトを生成
+		Calculator cal = new Calculator();
+		//期待値
+		int expected = 1;
+		//実測値
+		int actual = cal.sub(3,2);
+		
+		assertEquals(expected,actual);		
+	}
+	
+
+	@Test
+	public void testMul() {
+		//オブジェクトを生成
+		Calculator cal = new Calculator();
+		//期待値
+		int expected = 6;
+		//実測値
+		int actual = cal.mul(3,2);
+		
+		assertEquals(expected,actual);		
+	}
+
+	@Test
+	public void testDiv() {
+		//オブジェクトを生成
+		Calculator cal = new Calculator();
+		//期待値
+		float expected = 1.5f;
+		//実測値
+		float actual = cal.div(3,2);
+		
+		assertEquals(expected,actual);		
+	}
+
+}
